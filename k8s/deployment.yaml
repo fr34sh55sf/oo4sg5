@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oo4u
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oo4u
+  template:
+    metadata:
+      labels:
+        app: oo4u
+    spec:
+      containers:
+      - image: okteto.dev/oo4u:latest
+        name: oo4u
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "2b706d54-97fb-490a-867c-0e2bc8175ae9"
+        - name: Vless_Path
+          value: "/qfsdgdf43e"
+        - name: Vmess_UUID
+          value: "2b706d54-97fb-490a-867c-0e2bc8175ae9"
+        - name: Vmess_Path
+          value: "/Tfasg44sdajfs"
+        - name: Share_Path
+          value: "/v2link"
